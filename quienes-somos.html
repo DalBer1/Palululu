@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes Somos - Palu Lulu</title>
+
+  <!-- Fondo igual al index -->
+  <style>
+    body {
+      background-image: url('b1.jpg'); /* mismo fondo */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contenedor img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #e78fb3;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Botón "Volver" */
+    .volver {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .volver a {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #00C2A0;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+
+    .volver a:hover {
+      background-color: #009977;
+    }
+
+    @media (max-width: 768px) {
+      .contenedor {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contenedor img {
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+    
+    <!-- FOTO A LA DERECHA -->
+    <img src="dal.jpeg" alt="Dalma Bernardoni - Palu Lulu"> 
+    
+    <!-- TEXTO -->
+    <div>
+      <h1>Quiénes Somos</h1>
+
+      <p>
+        Soy <strong>Dalma Bernardoni</strong>, creadora de <strong>Palu Lulu</strong>, un emprendimiento nacido del deseo de hacer que cada festejo infantil sea más simple, más lindo y más disfrutable.
+      </p>
+
+      <p>
+        Creo profundamente en el poder de los pequeños detalles: una mesa bien armada, colores que combinan, un espacio cómodo… esas cosas que hacen que un cumpleaños se sienta especial sin que vos tengas que correr de un lado a otro.
+      </p>
+
+      <p>
+        En Palu Lulu me dedico a ofrecer alquileres cuidados, limpios y listos para usar, pensados para que las familias puedan organizar un cumple sin estrés. Mi objetivo es acompañarte en la parte más práctica, para que vos te quedes con lo importante:<strong>vivir el momento, disfrutar a tus peques y crear recuerdos felices.</strong> 
+      </p>
+
+      <p>
+        Cada entrega la preparo con dedicación, como si fuera para una fiesta propia. Porque para mí, celebrar siempre vale la pena, y si puedo ayudarte a que sea más fácil, mejor todavía.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- BOTÓN VOLVER -->
+  <div class="volver">
+    <a href="index.html">⬅ Volver al inicio</a>
+  </div>
+
+</body>
+</html>

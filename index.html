@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palu Lulu - Alquiler de Juegos</title>
+  <!-- Fuente Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Flatpickr CSS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+     body {
+  background-image: url('b1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+    header {
+      padding: 50px 20px;
+    }
+    .logo {
+  width: 300px;      /* ajustá el tamaño si lo querés más grande o chico */
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: -10px; /* opcional si querés que suba un poco */
+}
+    h1 {
+      color: #737373;
+      font-size: 55px;
+      margin: 0;
+    }
+    img {
+      max-width: 70%;
+      height: auto;
+      margin: 50px 0;
+      border-radius: 5px;
+      box-shadow: 0 4px 0px rgba(0,0,0,0.0);
+    }
+    .btn {
+      display: inline-block;
+      padding: 30px 80px;
+      background-color: #00C2A0;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-bottom: 50px;
+    }
+    .btn:hover {
+      background-color: #009977;
+    }
+    main {
+      padding: 20px;
+    }
+    input, button {
+
+      font-size: 20px;
+
+    }
+    button {
+      cursor: pointer;
+    }
+    #formaPago {
+      margin-top: 30px;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+
+   
+  </style>
+</head>
+
+<body> 
+
+
+
+  <!-- Barra de navegación -->
+<nav style="background-color:#e655ed; padding: 10px 0; margin-bottom: 30px;">
+  <ul style="list-style:none; display:flex; justify-content:center; margin:0; padding:0; flex-wrap:wrap;">
+  <li style="margin: 0 20px;">
+  <a href="quienes-somos.html" style="color:white; text-decoration:none; font-weight:bold;">
+    Quiénes somos
+  </a>
+</li>
+     <li style="margin: 0 15px;">
+  <a href="informacion.html" target="_blank" style="color:white; text-decoration:none; font-weight:bold;">Información</a>
+</li>
+
+    <li style="margin: 0 20px;">
+      <a href="galeria.html" style="color:white; text-decoration:none; font-weight:bold;">Galería</a>
+
+    </li>
+
+
+
+</nav>
+
+
+
+  <!-- Encabezado -->
+  <header>
+    <img src="logo.jpg" alt="Logo Palu Lulu" class="logo">
+    <h1>Alquiler de plaza blanda</h1>
+    <h2>“Todo lo que necesitás para un cumple hermoso”.</h2>
+    <p>¡Haz que tus eventos sean inolvidables!</p>
+    <a href="#contacto" class="btn">Contrátanos</a>
+  </header>
+
+  <!-- Imagen principal -->
+  <main>
+    <img src="Palu.jpeg" alt="Juegos de Palu Lulu">
+
+    <!-- Calendario -->
+    <h2>Selecciona el día para alquilar</h2>
+
+    <input id="fechaAlquilerAvanzado" type="text"><br><br>
+
+    <!-- Formas de pago y comprobante -->
+    <div id="formaPago">
+      <h3>Formas de pago</h3>
+      <ul style="list-style:none; padding:0; font-size:20px;">
+        <li>💳 Transferencia bancaria</li>
+        <li>📱 Mercado Pago / QR</li>
+        <li>💵 Efectivo en la entrega</li>
+      </ul>
+
+      <label for="comprobante">Sube el comprobante de pago:</label>
+      <input type="file" id="comprobante" accept=".jpg,.jpeg,.png,.pdf"><br><br>
+
+      <button onclick="enviarComprobante()" style="padding:10px 20px; background-color:#00C2A0; color:white; border:none; border-radius:8px;">
+        Reservar
+      </button>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer id="contacto">
+    <h2>Contáctanos</h2>
+    <p>
+      WhatsApp: 
+      <a href="https://wa.me/5493462533443" target="_blank">
+        Envíanos un mensaje
+      </a>
+    </p>
+    <p>
+      Instagram: 
+      <a href="https://www.instagram.com/palu__lulu/" target="_blank">@palu__lulu</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    // Inicializar calendario con días ocupados
+    const diasOcupados = ["2025-12-05", "2025-12-10"];
+    flatpickr("#fechaAlquilerAvanzado", {
+      dateFormat: "Y-m-d",
+      disable: diasOcupados
+    });
+
+    // Función para enviar comprobante y fecha a WhatsApp
+    function enviarComprobante() {
+      const fecha = document.getElementById('fechaAlquilerAvanzado').value;
+      const archivo = document.getElementById('comprobante').files[0];
+
+      if(!fecha) {
+        alert("Por favor selecciona una fecha.");
+        return;
+      }
+      if(!archivo) {
+        alert("Por favor sube tu comprobante de pago.");
+        return;
+      }
+
+      const numero = "5493462533443"; // tu WhatsApp
+      const mensaje = `Hola, he realizado el pago para el alquiler de juegos el día ${fecha}. Aquí va el comprobante: ${archivo.name}`;
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
